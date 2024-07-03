@@ -1,25 +1,16 @@
 package br.com.dio.desafio;
 
 import java.time.LocalDate;
-
-public class Mentoria {
+//tudo que tem em conteudo tem em mentoria mas nem tudo que tem em mentoria tem em conteudo
+public class Mentoria extends Conteudo {
     //atributo
-    private String titulo;
-    private String descricao;
     private LocalDate data;
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20;
+    }
     
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
     public LocalDate getData() {
         return data;
     }
@@ -28,9 +19,6 @@ public class Mentoria {
     }
     @Override
     public String toString() {
-        return "Mentoria [titulo=" + titulo + ", descricao=" + descricao + ", data=" + data + "]";
-    }
-    
-
-    
+        return "Mentoria [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", data=" + data + "]";
+    }  
 }
